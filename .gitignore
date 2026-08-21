@@ -1,0 +1,13 @@
+# ไฟล์ที่ไม่ต้องเก็บเข้า git
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+
+# ไฟล์ขยะจากระบบปฏิบัติการ / เอดิเตอร์
+.DS_Store
+Thumbs.db
+*.log
+.vscode/*
+!.vscode/extensions.json

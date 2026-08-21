@@ -1,0 +1,61 @@
+/*
+  tokens.css — ค่ากลางของหน้าตาเว็บทั้งระบบ (สี ฟอนต์ ระยะห่าง)
+  เหตุผล: รวมไว้ที่เดียว เวลาลูกค้าขอเปลี่ยนสีหรือขนาดตัวอักษร จะแก้จุดเดียวจบ
+  อ้างอิง Spec.md ข้อ 8 (แนวทาง UI)
+*/
+
+:root {
+  /* ---------- สี ---------- */
+  --color-primary: #1b3a6b;        /* น้ำเงินเข้ม — สีหลักของระบบ */
+  --color-primary-dark: #142c52;   /* ใช้ตอนเอาเมาส์ชี้ปุ่ม */
+  --color-primary-light: #e8eef7;  /* พื้นอ่อนสำหรับแถบ/ป้ายกำกับ */
+
+  --color-accent: #c9a227;         /* เหลืองทอง — ใช้น้อย ๆ เน้นปุ่มสำคัญ */
+  --color-accent-dark: #a8871d;
+
+  --color-bg: #f5f6f8;             /* พื้นหลังหน้าเว็บ เทาอ่อน */
+  --color-surface: #ffffff;        /* พื้นการ์ด/กล่องเนื้อหา ขาว */
+  --color-border: #d8dce3;
+
+  --color-text: #1f2430;           /* ตัวอักษรหลัก */
+  --color-text-muted: #5f6875;     /* ตัวอักษรรอง เช่น คำอธิบายใต้ช่องกรอก */
+  --color-text-invert: #ffffff;
+
+  --color-success: #1e7a46;        /* บันทึกสำเร็จ */
+  --color-warning: #b26a00;        /* คำเตือน */
+  --color-danger: #b3261e;         /* ข้อผิดพลาด / ยกเลิกเอกสาร */
+
+  /* ---------- ฟอนต์ ---------- */
+  --font-family-base: "Sarabun", "TH SarabunPSK", system-ui, -apple-system, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ขนาดตัวอักษรฐาน 16px เพราะผู้ใช้เป็นฝ่ายบัญชี ใช้ทั้งวัน */
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.375rem;   /* 22px */
+  --font-size-2xl: 1.75rem;   /* 28px */
+  --line-height-base: 1.6;
+
+  /* ---------- ระยะห่าง ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* ---------- มุมโค้ง / เงา ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(31, 36, 48, 0.08);
+  --shadow-md: 0 2px 8px rgba(31, 36, 48, 0.12);
+
+  /* ---------- ขนาดปุ่ม/ช่องกรอก ---------- */
+  /* สูงอย่างน้อย 44px เพื่อให้กดด้วยนิ้วบนมือถือได้สะดวก */
+  --control-height: 44px;
+}

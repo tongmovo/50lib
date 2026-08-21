@@ -1,0 +1,97 @@
+/* doc-view.css — สไตล์ของหน้าดูเอกสารเฉพาะตอนแสดงบนหน้าจอ (ไม่เกี่ยวกับตอนพิมพ์) */
+
+.doc-page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-7);
+}
+
+.doc-toolbar {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-toolbar__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.doc-toolbar__status {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.doc-toolbar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.doc-toolbar__field {
+  margin-bottom: 0;
+  min-width: 200px;
+}
+
+.doc-toolbar__guide {
+  margin-top: 0;
+}
+
+/* พื้นเทารอบกระดาษ ช่วยให้เห็นขอบกระดาษชัดว่าเนื้อหาล้นหน้าหรือยัง */
+.doc-paper {
+  padding: var(--space-4) 0;
+  background-color: #d8dce3;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.doc-paper .sheet {
+  box-shadow: 0 2px 10px rgba(31, 36, 48, 0.25);
+  padding: 4mm;
+}
+
+/* เลือกพิมพ์ฉบับเดียว ให้หน้าจอแสดงตรงกับสิ่งที่จะได้จริงด้วย */
+.doc-paper[data-copies="1"] .sheet--copy2,
+.doc-paper[data-copies="2"] .sheet--copy1 {
+  display: none;
+}
+
+/* ---------- ปรับสำหรับจอมือถือ ---------- */
+
+@media (max-width: 700px) {
+  .doc-page {
+    padding: var(--space-4) var(--space-3) var(--space-6);
+  }
+
+  /* ปุ่มยืดเต็มความกว้าง กดด้วยนิ้วง่ายกว่า */
+  .doc-toolbar__controls .btn,
+  .doc-toolbar__field {
+    width: 100%;
+  }
+
+  /*
+    ตัวกระดาษกว้างคงที่ 190 มม. เท่ากระดาษ A4 จริง จึงย่อตามจอไม่ได้
+    เพราะถ้าย่อ สิ่งที่เห็นบนจอจะไม่ตรงกับสิ่งที่ออกมาบนกระดาษ
+    บนมือถือจึงให้เลื่อนดูทางแนวนอนในกรอบของมันเอง หน้าเว็บไม่ล้น
+  */
+  .doc-paper {
+    padding: var(--space-3) 0;
+  }
+
+  .doc-paper::after {
+    content: "เลื่อนกระดาษไปทางซ้าย-ขวาเพื่อดูให้ครบ หรือเปิดบนคอมพิวเตอร์เพื่อดูเต็มหน้า";
+    display: block;
+    padding: var(--space-2) var(--space-3) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+  }
+}

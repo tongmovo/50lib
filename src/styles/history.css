@@ -1,0 +1,238 @@
+/* history.css — สไตล์เฉพาะหน้าประวัติเอกสาร */
+
+.history__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.history__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.history__subtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* ---------- แถบสรุป ---------- */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.summary__loading {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.summary__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.summary__item--highlight {
+  background-color: var(--color-primary-light);
+}
+
+.summary__label {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.summary__value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+}
+
+.summary__unit {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* คำอธิบายกินเต็มความกว้าง เพราะเป็นหมายเหตุของทั้งแถบ ไม่ใช่ของช่องใดช่องหนึ่ง */
+.summary__note {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.history-filters__payee {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- ตาราง ---------- */
+
+.history-table-wrap {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.history-table th {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.history-table__docno {
+  display: block;
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.history-table__book,
+.history-table__taxid {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.history-table__payee {
+  font-weight: var(--font-weight-semibold);
+}
+
+.history-table__money {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* แถวที่ยกเลิกแล้วต้องดูจางลง เพื่อให้แยกออกจากเอกสารที่ใช้ได้จริงทันที */
+.history-table__row--void {
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+}
+
+.history-table__reason {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.history-table__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.history-table__hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- ป้ายสถานะ ---------- */
+
+.badge--draft {
+  color: var(--color-warning);
+  background-color: #fff8e6;
+}
+
+.badge--issued {
+  color: var(--color-success);
+  background-color: #e8f5ed;
+}
+
+.badge--void {
+  color: var(--color-danger);
+  background-color: #fdecea;
+}
+
+/* ---------- ฟอร์มยกเลิกเอกสาร ---------- */
+
+.void-form__summary {
+  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.void-form__warning {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  background-color: #fdecea;
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+}
+
+.void-form__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* บนจอแคบ เปลี่ยนตารางเป็นการ์ดเรียงลง เพราะ 8 คอลัมน์แคบเกินกว่าจะอ่านสบาย */
+@media (max-width: 900px) {
+  .history-table thead {
+    display: none;
+  }
+
+  .history-table,
+  .history-table tbody,
+  .history-table tr,
+  .history-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .history-table tr {
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .history-table td {
+    padding: var(--space-2) 0;
+    border-bottom: none;
+  }
+
+  .history-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: var(--space-1);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  .history-table__money {
+    text-align: left;
+  }
+}

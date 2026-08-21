@@ -1,0 +1,444 @@
+/*
+  app.css — สไตล์พื้นฐานที่ใช้ร่วมกันทั้งเว็บ
+  (สไตล์เฉพาะหน้าจอ แยกเป็นไฟล์ของใครของมัน เช่น login.css, navbar.css)
+*/
+
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- โครงหน้า ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.page--center {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loading,
+.page-error {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.page-error__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-xl);
+  color: var(--color-danger);
+}
+
+.page-error__text {
+  margin: 0;
+}
+
+/* ---------- การ์ดเนื้อหา ---------- */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+
+.card--center {
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+.card--warning {
+  border-color: var(--color-warning);
+  border-left-width: 4px;
+}
+
+.card--muted {
+  background-color: transparent;
+  box-shadow: none;
+  border-style: dashed;
+}
+
+.card__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.card__subtitle {
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.card__text {
+  margin: 0 0 var(--space-3);
+}
+
+.card__text--muted {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* ข้อความหลายบรรทัดที่ต้องคงการขึ้นบรรทัดไว้ เช่น คำแนะนำการตั้งค่า .env */
+.card__pre {
+  margin: 0;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--color-text-muted);
+}
+
+/* ---------- ตารางข้อมูลแบบ ป้ายกำกับ + ค่า ---------- */
+
+.info-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.info-list__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-list__row:last-child {
+  border-bottom: none;
+}
+
+.info-list__label {
+  min-width: 140px;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.info-list__value {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+.todo-list {
+  margin: 0;
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+}
+
+/* ---------- ช่องกรอกข้อมูล ---------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.field__label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+.field__input {
+  height: var(--control-height);
+  padding: 0 var(--space-3);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* ---------- ปุ่ม ---------- */
+/* สูงอย่างน้อย 44px เพื่อให้กดด้วยนิ้วบนมือถือได้สะดวก */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--control-height);
+  padding: 0 var(--space-5);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  color: var(--color-text-invert);
+  background-color: var(--color-primary);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.btn--ghost {
+  color: var(--color-text-invert);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ---------- ปุ่มเพิ่มเติม (ใช้ในหน้าตั้งค่าเป็นต้นไป) ---------- */
+
+.btn--secondary {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.btn--danger-ghost {
+  color: var(--color-danger);
+  background-color: transparent;
+  border-color: var(--color-danger);
+}
+
+.btn--danger-ghost:hover:not(:disabled) {
+  background-color: #fdecea;
+}
+
+/* ---------- ช่องกรอกเพิ่มเติม ---------- */
+
+.field__input--area {
+  height: auto;
+  min-height: 88px;
+  padding: var(--space-3);
+  resize: vertical;
+  line-height: var(--line-height-base);
+}
+
+/* ช่องที่แก้ไม่ได้ ต้องดูออกทันทีว่าต่างจากช่องที่แก้ได้ */
+.field__input[readonly] {
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.field__hint {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.field__required {
+  color: var(--color-danger);
+}
+
+/* ---------- กล่องแจ้งผลในฟอร์ม ---------- */
+
+.form-alert {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+  border: 1px solid;
+  border-radius: var(--radius-md);
+}
+
+.form-alert--error {
+  color: var(--color-danger);
+  background-color: #fdecea;
+  border-color: var(--color-danger);
+}
+
+.form-alert--success {
+  color: var(--color-success);
+  background-color: #e8f5ed;
+  border-color: var(--color-success);
+}
+
+/* ปุ่มขนาดเล็ก ใช้ในตารางที่มีหลายแถว จะได้ไม่กินพื้นที่มากเกินไป */
+.btn--small {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+/* ---------- ป้ายสถานะ ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.badge--on {
+  color: var(--color-success);
+  background-color: #e8f5ed;
+}
+
+.badge--off {
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+}
+
+/* ---------- กล่องคำแนะนำขั้นตอน ---------- */
+
+.notice {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
+
+.notice__title {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+}
+
+.notice__text {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.notice__text--muted {
+  color: var(--color-text-muted);
+}
+
+.notice__steps {
+  margin: 0 0 var(--space-2);
+  padding-left: var(--space-5);
+  font-size: var(--font-size-sm);
+}
+
+.notice__steps li {
+  margin-bottom: var(--space-1);
+}
+
+/* ---------- กล่องหน้าต่างซ้อน ---------- */
+
+.modal {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.modal::backdrop {
+  background-color: rgba(31, 36, 48, 0.5);
+}
+
+.modal__head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.modal__close {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background-color: var(--color-bg);
+}
+
+.modal__body {
+  padding: var(--space-5);
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
+}
+
+/* กล่องแจ้งผลที่มีปุ่มอยู่ข้างใน เช่น คำเตือนเลขภาษีซ้ำ */
+.form-alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}

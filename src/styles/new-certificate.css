@@ -1,0 +1,304 @@
+/* new-certificate.css — สไตล์เฉพาะหน้าสร้างเอกสาร 50 ทวิ */
+
+.new-cert__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.new-cert__subtitle {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+}
+
+/* ช่องกรอกที่วางเรียงกันได้หลายช่องต่อแถว แต่ยุบเป็นแถวเดียวเมื่อจอแคบ */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ---------- ช่องเลือกผู้ถูกหักภาษี ---------- */
+
+.payee-picker {
+  position: relative;
+}
+
+.payee-picker__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.payee-picker__field {
+  flex: 1 1 320px;
+  margin-bottom: 0;
+}
+
+/* ดันปุ่มลงมาให้เสมอกับช่องกรอก ไม่ลอยไปเสมอกับป้ายกำกับ */
+.payee-picker__add {
+  margin-top: 26px;
+}
+
+.payee-picker__results {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.payee-picker__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.payee-picker__item:last-child {
+  border-bottom: none;
+}
+
+.payee-picker__item:hover,
+.payee-picker__item:focus {
+  background-color: var(--color-primary-light);
+  outline: none;
+}
+
+.payee-picker__item-name {
+  font-weight: var(--font-weight-semibold);
+}
+
+.payee-picker__item-tax {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.payee-picker__selected {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
+
+.payee-picker__selected-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.payee-picker__selected-name {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+/* ---------- ตารางรายการเงินได้ ---------- */
+
+.income-lines__table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--space-3);
+}
+
+.income-lines__table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.income-lines__table th,
+.income-lines__table td {
+  padding: var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.income-lines__table th {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.income-lines__select {
+  min-width: 160px;
+}
+
+.income-lines__other {
+  margin-top: var(--space-2);
+}
+
+/* ตัวเลขชิดขวาและกว้างเท่ากันทุกตัว อ่านยอดเทียบกันได้ง่าย */
+.income-lines__number,
+.income-lines__rate {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.income-lines__rate {
+  max-width: 90px;
+}
+
+/* ช่องภาษีที่ผู้ใช้แก้เอง ต้องดูออกทันทีว่าไม่ได้คำนวณอัตโนมัติแล้ว */
+.income-lines__number--manual {
+  border-color: var(--color-warning);
+  background-color: #fff8e6;
+}
+
+.income-lines__manual-tag {
+  display: inline-block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-warning);
+}
+
+.income-lines__recalc {
+  margin-top: var(--space-2);
+}
+
+/* ---------- ยอดรวม ---------- */
+
+.totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.totals__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.totals__item--highlight {
+  background-color: var(--color-primary-light);
+}
+
+.totals__label {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.totals__value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+}
+
+.totals__unit {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.totals__subhead {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.totals__text {
+  padding: var(--space-3);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- ตัวเลือกผู้จ่ายเงิน ---------- */
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.radio-group__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  cursor: pointer;
+}
+
+/* ปุ่มตัวเลือกต้องใหญ่พอกดด้วยนิ้วบนมือถือ */
+.radio-group__option input {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- ปุ่มบันทึก ---------- */
+
+.new-cert__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+}
+
+.new-cert__actions-hint {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+/* กล่องคำเตือนแบบบรรทัดเดียว ใช้กับข้อความกำกับอัตราภาษี */
+.notice--inline {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  color: var(--color-warning);
+  background-color: #fff8e6;
+  font-size: var(--font-size-sm);
+}
+
+/* ---------- ปรับสำหรับจอมือถือ ---------- */
+
+@media (max-width: 640px) {
+  /*
+    ปุ่มเพิ่มรายชื่อใหม่ถูกดันลงมา 26px เพื่อให้เสมอกับช่องกรอกตอนอยู่บรรทัดเดียวกัน
+    พอจอแคบจนปุ่มตกลงมาบรรทัดใหม่ ระยะนั้นกลายเป็นช่องว่างเปล่า ๆ จึงเอาออก
+  */
+  .payee-picker__add {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  /* ปุ่มบันทึกยืดเต็มความกว้าง กดด้วยนิ้วง่ายกว่าปุ่มเล็ก ๆ เรียงกัน */
+  .new-cert__actions .btn {
+    flex: 1 1 100%;
+  }
+
+  /*
+    แถบปุ่มติดขอบล่างจอ ถ้ากินพื้นที่มากเกินไปจะบังฟอร์มที่กำลังกรอก
+    บนจอแคบจึงให้เลื่อนไปกับหน้าตามปกติ ไม่ต้องติดขอบไว้
+  */
+  .new-cert__actions {
+    position: static;
+  }
+
+  .totals__item {
+    flex-wrap: wrap;
+  }
+}
