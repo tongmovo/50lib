@@ -7,9 +7,9 @@
 }
 
 .navbar__inner {
-  max-width: 960px;
+  max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--page-padding-inline);
   display: flex;
   flex-wrap: wrap;
   align-items: center;

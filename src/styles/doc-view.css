@@ -1,9 +1,9 @@
 /* doc-view.css — สไตล์ของหน้าดูเอกสารเฉพาะตอนแสดงบนหน้าจอ (ไม่เกี่ยวกับตอนพิมพ์) */
 
 .doc-page {
-  max-width: 1040px;
+  max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-4) var(--space-7);
+  padding: var(--space-5) var(--page-padding-inline) var(--space-7);
 }
 
 .doc-toolbar {
