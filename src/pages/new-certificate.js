@@ -128,7 +128,7 @@ export async function renderNewCertificatePage(root, options = {}) {
 
   /* ---------- ปุ่มบันทึก ---------- */
   const actions = document.createElement("section");
-  actions.className = "card new-cert__actions";
+  actions.className = "card btn-group new-cert__actions";
   actions.innerHTML = `
     <button class="btn btn--secondary" type="button" data-role="save-draft">${
       mode === "edit" ? "บันทึกร่าง (ทับใบเดิม)" : "บันทึกร่าง"

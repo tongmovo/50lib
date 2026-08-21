@@ -175,7 +175,7 @@ export async function renderHistoryPage(root) {
     nav.className = "pagination";
     nav.innerHTML = `
       <span class="pagination__info">แสดง ${first}-${last} จากทั้งหมด ${total} ใบ</span>
-      <div class="pagination__buttons">
+      <div class="btn-group">
         <button class="btn btn--small btn--secondary" type="button" data-role="prev"
           ${page <= 1 ? "disabled" : ""}>ก่อนหน้า</button>
         <span class="pagination__page">หน้า ${page} / ${totalPages}</span>

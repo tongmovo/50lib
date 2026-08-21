@@ -123,8 +123,10 @@ export function createIncomeLines({ incomeTypes, onChange, initialLines = null }
                  data-role="tax" type="text" inputmode="decimal" value="${line.taxAmount}" />
           ${
             line.isManual
-              ? `<button type="button" class="btn btn--small btn--secondary income-lines__recalc" data-role="recalc">คำนวณใหม่</button>
-                 <span class="income-lines__manual-tag">แก้ด้วยมือ</span>`
+              ? `<div class="btn-group btn-group--tight income-lines__manual">
+                   <button type="button" class="btn btn--small btn--secondary" data-role="recalc">คำนวณใหม่</button>
+                   <span class="income-lines__manual-tag">แก้ด้วยมือ</span>
+                 </div>`
               : ""
           }
         </td>

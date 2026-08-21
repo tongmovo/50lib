@@ -100,7 +100,7 @@ function buildRow(cert, isAdmin) {
         }
       </td>
       <td data-label="จัดการ">
-        <div class="history-table__actions">
+        <div class="btn-group btn-group--tight">
           <button type="button" class="btn btn--small btn--secondary" data-role="view">ดู</button>
           <button type="button" class="btn btn--small btn--secondary" data-role="reprint">พิมพ์ซ้ำ</button>
           <button type="button" class="btn btn--small btn--secondary" data-role="copy">คัดลอกเป็นใบใหม่</button>

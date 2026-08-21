@@ -98,16 +98,18 @@ export async function createUserManager({ currentUserId }) {
           </select>
         </td>
         <td data-label="สถานะการใช้งาน">
-          <span class="badge ${user.is_active ? "badge--on" : "badge--off"}">
-            ${user.is_active ? "เปิดใช้งาน" : "ปิดใช้งาน"}
-          </span>
-          <button
-            type="button"
-            class="btn btn--small ${user.is_active ? "btn--danger-ghost" : "btn--secondary"}"
-            data-role="toggle-active"
-          >
-            ${user.is_active ? "ปิดการใช้งาน" : "เปิดการใช้งาน"}
-          </button>
+          <div class="btn-group btn-group--tight">
+            <span class="badge ${user.is_active ? "badge--on" : "badge--off"}">
+              ${user.is_active ? "เปิดใช้งาน" : "ปิดใช้งาน"}
+            </span>
+            <button
+              type="button"
+              class="btn btn--small ${user.is_active ? "btn--danger-ghost" : "btn--secondary"}"
+              data-role="toggle-active"
+            >
+              ${user.is_active ? "ปิดการใช้งาน" : "เปิดการใช้งาน"}
+            </button>
+          </div>
         </td>
       </tr>
     `;

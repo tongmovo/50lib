@@ -62,7 +62,7 @@ export async function renderHomePage(root) {
 
     <section class="card">
       <h2 class="card__subtitle">ทางลัด</h2>
-      <div class="home__shortcuts">
+      <div class="btn-group home__shortcuts">
         <a class="btn btn--primary" href="/new" data-link>+ สร้างเอกสารใหม่</a>
         <a class="btn btn--secondary" href="/history" data-link>ดูประวัติทั้งหมด</a>
         <a class="btn btn--secondary" href="/payees" data-link>จัดการรายชื่อ</a>

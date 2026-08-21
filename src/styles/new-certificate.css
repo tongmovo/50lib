@@ -158,16 +158,16 @@
   background-color: #fff8e6;
 }
 
+/* ปุ่ม "คำนวณใหม่" กับป้าย "แก้ด้วยมือ" อยู่แถวเดียวกันใต้ช่องภาษี ต้องตกบรรทัดเองเมื่อคอลัมน์แคบ */
+.income-lines__manual {
+  margin-top: var(--space-2);
+}
+
 .income-lines__manual-tag {
-  display: inline-block;
-  margin-top: var(--space-1);
   font-size: var(--font-size-sm);
   color: var(--color-warning);
 }
 
-.income-lines__recalc {
-  margin-top: var(--space-2);
-}
 
 /* ---------- ยอดรวม ---------- */
 
@@ -250,10 +250,7 @@
 /* ---------- ปุ่มบันทึก ---------- */
 
 .new-cert__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-3);
+  /* ระยะห่างและการตกบรรทัดของปุ่ม มาจาก .btn-group แล้ว เหลือเฉพาะการติดขอบล่างจอ */
   position: sticky;
   bottom: 0;
   z-index: 5;

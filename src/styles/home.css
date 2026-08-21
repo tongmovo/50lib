@@ -78,11 +78,6 @@
 }
 
 /* ปุ่มลัด บนมือถือให้ยืดเต็มความกว้างเพื่อให้กดง่าย */
-.home__shortcuts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
 
 @media (max-width: 520px) {
   .home__shortcuts .btn {

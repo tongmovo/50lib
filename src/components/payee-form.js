@@ -105,7 +105,7 @@ export function createPayeeForm({ payee, orgId, userId, incomeTypes, onSaved, on
 
     ${textAreaField({ id: "payee-note", label: "หมายเหตุ", value: data.note, canEdit: true })}
 
-    <div class="payee-form__actions">
+    <div class="btn-group btn-group--end payee-form__actions">
       <button class="btn btn--primary" type="submit" data-role="submit">${saveLabel}</button>
     </div>
   `;

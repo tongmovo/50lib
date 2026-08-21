@@ -68,7 +68,7 @@ function buildRow(payee, stat) {
       <td data-label="เอกสารที่เคยออก">${count} ใบ</td>
       <td data-label="ใช้ล่าสุดเมื่อ">${escapeHtml(lastUsed)}</td>
       <td data-label="จัดการ">
-        <div class="payee-table__actions">
+        <div class="btn-group btn-group--tight">
           <button type="button" class="btn btn--small btn--secondary" data-role="edit">แก้ไข</button>
           <button
             type="button"

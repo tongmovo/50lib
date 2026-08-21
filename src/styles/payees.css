@@ -90,11 +90,6 @@
   background-color: var(--color-bg);
 }
 
-.payee-table__actions {
-  display: flex;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
 
 /* ---------- สถานะไม่มีข้อมูล ---------- */
 
@@ -133,11 +128,6 @@
   color: var(--color-text-muted);
 }
 
-.pagination__buttons {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
 
 /* ---------- ฟอร์มในกล่องเพิ่ม/แก้ไข ---------- */
 
@@ -153,8 +143,7 @@
 }
 
 .payee-form__actions {
-  display: flex;
-  justify-content: flex-end;
+  /* ระยะห่างและการชิดขวา มาจาก .btn-group .btn-group--end แล้ว */
   margin-top: var(--space-4);
 }
 

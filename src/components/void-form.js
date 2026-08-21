@@ -50,7 +50,7 @@ export function createVoidForm({ certificate, onConfirm }) {
       <p class="field__hint">เหตุผลนี้จะถูกเก็บไว้เป็นหลักฐานถาวร และแสดงในหน้าประวัติเอกสาร</p>
     </div>
 
-    <div class="void-form__actions">
+    <div class="btn-group btn-group--end">
       <button class="btn btn--danger-ghost" type="submit" data-role="confirm">
         ยืนยันยกเลิกเอกสาร
       </button>

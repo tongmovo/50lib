@@ -77,11 +77,6 @@
   color: var(--color-text-muted);
 }
 
-.asset__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
 
 /* ซ่อนช่องเลือกไฟล์จริงไว้ แล้วใช้ label ที่จัดสไตล์เป็นปุ่มแทน จะได้หน้าตาเข้าชุดกับปุ่มอื่น */
 .asset__choose {
@@ -189,14 +184,6 @@
   padding: 0 var(--space-2);
 }
 
-.user-table td[data-label="สถานะการใช้งาน"] {
-  display: table-cell;
-}
-
-.user-table td[data-label="สถานะการใช้งาน"] .btn {
-  margin-left: var(--space-2);
-}
-
 /* บนมือถือ เปลี่ยนตารางเป็นการ์ดเรียงลง เพราะ 3 คอลัมน์แคบเกินกว่าจะอ่านสบาย */
 @media (max-width: 640px) {
   .user-table thead {
@@ -229,10 +216,5 @@
     margin-bottom: var(--space-1);
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
-  }
-
-  .user-table td[data-label="สถานะการใช้งาน"] .btn {
-    margin-left: 0;
-    margin-top: var(--space-2);
   }
 }

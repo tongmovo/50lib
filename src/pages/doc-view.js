@@ -106,7 +106,7 @@ function buildToolbar(certificate) {
       </p>
     </div>
 
-    <div class="doc-toolbar__controls">
+    <div class="btn-group doc-toolbar__controls">
       <label class="field doc-toolbar__field">
         <span class="field__label">จำนวนฉบับที่จะพิมพ์</span>
         <select class="field__input" data-role="copies">

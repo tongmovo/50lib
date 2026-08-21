@@ -34,7 +34,7 @@ export function createAssetUpload({ orgId, kind, label, hint, path, canEdit, onC
 
     <p class="asset__message" data-role="message" hidden></p>
 
-    <div class="asset__actions" ${canEdit ? "" : "hidden"}>
+    <div class="btn-group btn-group--tight" ${canEdit ? "" : "hidden"}>
       <label class="btn btn--secondary asset__choose">
         <span data-role="choose-label">เลือกไฟล์ PNG</span>
         <input type="file" accept="image/png" data-role="file" class="asset__file" />

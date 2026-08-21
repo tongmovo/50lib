@@ -31,10 +31,11 @@
 }
 
 .doc-toolbar__controls {
-  display: flex;
-  flex-wrap: wrap;
+  /*
+    การเรียงและตกบรรทัดของปุ่ม มาจาก .btn-group แล้ว
+    เหลือไว้เฉพาะการจัดฐานให้เสมอกัน เพราะช่องเลือกจำนวนฉบับมีป้ายกำกับอยู่ข้างบนจึงสูงกว่าปุ่ม
+  */
   align-items: flex-end;
-  gap: var(--space-3);
 }
 
 .doc-toolbar__field {
